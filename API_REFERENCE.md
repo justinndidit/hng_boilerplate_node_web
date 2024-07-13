@@ -1,59 +1,121 @@
-# [App Name] Integration API Documentation
+# Product API Endpoints
 
-## Overview
+## Authentication
 
-[Description]
+### Bearer Authentication
+- **Type**: HTTP
+- **Scheme**: Bearer
+- **Bearer Format**: JWT
 
-## Base URL
+## Product Endpoints
 
-- Live URL: `https://example.com/api/v1`
-- Staging URL: `https://staging.example.com/api/v1`
+### Get All Products
+- **Endpoint**: `GET /products`
+- **Description**: Retrieve a list of all products.
+- **Query Parameters**:
+  - `page` (integer, optional): Page number for pagination.
+  - `limit` (integer, optional): Number of products per page.
+  - `sort` (string, optional): Field to sort by (name, price, createdAt).
+  - `order` (string, optional): Order of sorting (asc, desc).
+  - `category` (string, optional): Filter by category.
+  - `priceMin` (number, optional): Minimum price filter.
+  - `priceMax` (number, optional): Maximum price filter.
+- **Security**: Bearer Authentication
 
-## [Section]
+### Create a New Product
+- **Endpoint**: `POST /products`
+- **Description**: Create a new product.
+- **Request Body**: Product object (name, description, price, categoryId, stock)
+- **Security**: Bearer Authentication
 
-### [Endpoint]
+### Get Product by ID
+- **Endpoint**: `GET /products/{id}`
+- **Description**: Retrieve a product by its unique ID.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the product.
+- **Security**: Bearer Authentication
 
-#### [SubTitle]
+### Update a Product
+- **Endpoint**: `PUT /products/{id}`
+- **Description**: Update an existing product.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the product.
+- **Request Body**: Updated product object.
+- **Security**: Bearer Authentication
 
-- **Endpoint:** `/api/[version]/[endpoint]`
-- **Method:** [HTTP-Method]
-- **Description:** [Description]
+### Delete a Product
+- **Endpoint**: `DELETE /products/{id}`
+- **Description**: Delete a product by its unique ID.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the product.
+- **Security**: Bearer Authentication
 
-**Body:**
+## Category Endpoints
 
-```json
-{
-  "[Key]": "[value]"
-}
-```
+### Get All Categories
+- **Endpoint**: `GET /categories`
+- **Description**: Retrieve a list of all categories.
+- **Security**: Bearer Authentication
 
-**Success Response:**
+### Create a New Category
+- **Endpoint**: `POST /categories`
+- **Description**: Create a new category.
+- **Request Body**: Category object (name)
+- **Security**: Bearer Authentication
 
-- **Code:** [Code]
-- **Content:**
+### Get Category by ID
+- **Endpoint**: `GET /categories/{id}`
+- **Description**: Retrieve a category by its unique ID.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the category.
+- **Security**: Bearer Authentication
 
-```json
-{
-  "status": true,
-  "message": "[Message]",
-  "data": {
-    "[Key]": "[value]"
-  }
-}
-```
+### Update a Category
+- **Endpoint**: `PUT /categories/{id}`
+- **Description**: Update an existing category.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the category.
+- **Request Body**: Updated category object.
+- **Security**: Bearer Authentication
 
-**Error Responses:**
+### Delete a Category
+- **Endpoint**: `DELETE /categories/{id}`
+- **Description**: Delete a category by its unique ID.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the category.
+- **Security**: Bearer Authentication
 
-- **Code:** [Status-Code]
-- **Content:**
+## Review Endpoints
 
-```json
-{
-  "status": false,
-  "message": "[Message]"
-}
-```
+### Get All Reviews
+- **Endpoint**: `GET /reviews`
+- **Description**: Retrieve a list of all reviews.
+- **Security**: Bearer Authentication
 
-## Versioning
+### Create a New Review
+- **Endpoint**: `POST /reviews`
+- **Description**: Create a new review.
+- **Request Body**: Review object (productId, rating, comment)
+- **Security**: Bearer Authentication
 
-This API is versioned to ensure backward compatibility and easy maintenance. The current version is [version].
+### Get Review by ID
+- **Endpoint**: `GET /reviews/{id}`
+- **Description**: Retrieve a review by its unique ID.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the review.
+- **Security**: Bearer Authentication
+
+### Update a Review
+- **Endpoint**: `PUT /reviews/{id}`
+- **Description**: Update an existing review.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the review.
+- **Request Body**: Updated review object.
+- **Security**: Bearer Authentication
+
+### Delete a Review
+- **Endpoint**: `DELETE /reviews/{id}`
+- **Description**: Delete a review by its unique ID.
+- **Path Parameters**:
+  - `id` (number): The unique ID of the review.
+- **Security**: Bearer Authentication

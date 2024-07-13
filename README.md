@@ -1,35 +1,22 @@
-# [App Name] Integration Documentation
+# Product API Integration Documentation
 
 ## Overview
 
-[Description]
+##  API for managing products with security, role-based access, payment, and checkout
 
-## Folder Structure
-
-```
-|--- src
-|    |--- controllers
-|    |--- database
-|    |--- interfaces
-|    |--- middlewares
-|    |--- routes
-|    |--- services
-|    |--- utils
-|    |--- server.ts
-|--- .env
-|--- app.ts
-|--- .gitignore
-|--- package.json
-|--- tsconfig.json
-```
-
-## Dependencies (Dev)
+## Dependencies 
 
 - Node.js
-- TypeScript
 - Express
-- ts-node-dev
-- [Other dependencies]
+- dotenv
+
+## Dev Dependencies
+- typescript
+- ts-node
+- nodemon
+- yamljs
+- swagger-ui-express
+
 
 ## Getting Started
 
@@ -213,7 +200,6 @@ Here's an overview of the project's folder structure:
 ```
 |--- src
 |    |--- controllers
-          |--- v1
 |    |--- database
 |    |--- interfaces
 |    |--- middlewares
@@ -221,7 +207,7 @@ Here's an overview of the project's folder structure:
 |         |--- v1
 |    |--- services
 |    |--- utils
-|    |--- server.ts
+|    |--- index.ts
 |--- .env
 |--- app.ts
 |--- .gitignore
@@ -237,7 +223,6 @@ Here are some useful npm scripts that you can use during development and product
 - `npm run start:dev`: Starts the development server with live reloading.
 - `npm run start`: Starts the production server.
 - `npm run test`: Runs the test suite (if available).
-- `npm run lint`: Runs the linter to check for code style issues.
 
 ## Additional Resources
 
